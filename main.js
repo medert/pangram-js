@@ -1,6 +1,15 @@
 // define the isPangram() function
 let isPangram = (sentence) => {
   // your code, here
+  let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+  let newSentence = sentence.replace(/[\. ,:-]+/g, "").toLowerCase().split('').sort();
+  newSentence = newSentence.filter((v,i) => newSentence.indexOf(v) == i).join("");
+
+  if (newSentence === alphabet) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 // test the isPangram() function, and print results to the console.
